@@ -3,11 +3,12 @@ import {
 } from 'mongoose';
 
 export interface ProjectDocument extends Document {
-    image: string;
-    title: string;
-    repositoryLink: string;
-    description: string;
-    tecnologias: string[];
+  images?: Array<String>,
+  title: string;
+  repositoryLink: string;
+  pageLink: string;
+  description: string;
+  technologies: Array<String>,
 }
 
 const ProjectSchema = new Schema({
@@ -15,17 +16,23 @@ const ProjectSchema = new Schema({
     type: String,
     required: true,
   },
-  image: {
-    type: String,
-    required: true,
+  images: {
+    type: Array,
   },
   repositoryLink: {
     type: String,
     required: true,
   },
+  pageLink: {
+    type: String,
+    requires: true,
+  },
   description: {
     type: String,
     required: true,
+  },
+  technologies: {
+    type: Array,
   },
 }, {
   timestamps: true,
