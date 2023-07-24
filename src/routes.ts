@@ -8,7 +8,8 @@ import user from './modules/user';
 import skills from './modules/skill';
 import studies from './modules/studies';
 import upload from './modules/upload';
-import message from './modules/message';
+import messages from './modules/message';
+import proyects from './modules/project';
 import authLocal from './modules/auth/local';
 
 function routes(app: Application) {
@@ -16,7 +17,8 @@ function routes(app: Application) {
   app.use('/api/users', user);
   app.use('/api/skills', skills);
   app.use('/api/studies', studies);
-  app.use('/api/message', message);
+  app.use('/api/messages', messages);
+  app.use('/api/proyects', proyects);
   app.use('/api/upload', upload);
   app.use('/auth/local', authLocal);
 }
