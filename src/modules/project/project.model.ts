@@ -7,7 +7,7 @@ export interface ProjectDocument extends Document {
   title: string;
   repositoryLink: string;
   pageLink: string;
-  description: string;
+  description: Array<String>,
   technologies: Array<String>,
 }
 
@@ -18,6 +18,7 @@ const ProjectSchema = new Schema({
   },
   images: {
     type: Array,
+    required: true,
   },
   repositoryLink: {
     type: String,
@@ -28,11 +29,12 @@ const ProjectSchema = new Schema({
     requires: true,
   },
   description: {
-    type: String,
+    type: Array,
     required: true,
   },
   technologies: {
     type: Array,
+    required: true,
   },
 }, {
   timestamps: true,
