@@ -1,15 +1,22 @@
 import {
   Schema, model, Document,
 } from 'mongoose';
+import { SkillType } from './skill.types';
 
 export interface SkillDocument extends Document {
   id: String,
-  nameTechnology: String,
+  ability: SkillType,
+  classAbility: String,
   image: String,
 }
 
 const SkillSchema = new Schema({
-  nameTechnology: {
+  ability: {
+    type: String,
+    required: true,
+  },
+
+  classAbility: {
     type: String,
     required: true,
   },
