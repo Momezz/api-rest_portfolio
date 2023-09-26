@@ -6,8 +6,10 @@ import { SkillType } from './skill.types';
 export interface SkillDocument extends Document {
   id: String,
   ability: SkillType,
-  classAbility: String,
+  level: Number,
   image: String,
+  classAbility: String,
+  description: String
 }
 
 const SkillSchema = new Schema({
@@ -15,14 +17,24 @@ const SkillSchema = new Schema({
     type: String,
     required: true,
   },
-
-  classAbility: {
-    type: String,
+  level: {
+    type: Number,
     required: true,
+    min: 1,
+    max: 10,
   },
   image: {
     type: String,
     required: true,
+  },
+  classAbility: {
+    type: String,
+    enum: ['TECHNICAL', 'SOFT'],
+    required: true,
+  },
+  description: {
+    type: String,
+    maxlength: 100,
   },
 }, {
   timestamps: true,
