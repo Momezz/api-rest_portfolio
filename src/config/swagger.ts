@@ -17,15 +17,15 @@ const options = {
     info: {
       title: 'API Documentation',
       version,
-      description: 'API Documentation for your project',
+      description: 'API Documentation portfolio',
       license: {
         name: 'MIT',
         url: 'https://choosealicense.com/licenses/mit/',
       },
       contact: {
-        name: 'Make It Real',
-        url: 'https://makeitreal.camp/',
-        email: 'info@makeitreal.camp',
+        name: 'Julian Gomez Mejia',
+        url: 'https://next-portfolio-momezz.vercel.app/',
+        email: 'julgomez14@gmail.com',
       },
     },
     components: {
