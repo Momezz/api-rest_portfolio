@@ -9,6 +9,7 @@ export interface ProjectDocument extends Document {
   pageLink: string;
   description: Array<String>,
   technologies: Array<String>,
+  qrImage: String,
 }
 
 const ProjectSchema = new Schema({
@@ -35,6 +36,10 @@ const ProjectSchema = new Schema({
   technologies: {
     type: Array,
     required: true,
+  },
+  qrImage: {
+    type: String,
+    requires: false,
   },
 }, {
   timestamps: true,
