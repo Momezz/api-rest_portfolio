@@ -15,8 +15,8 @@ const sendMail = async (req) => {
     name, email, subject, message,
   } = req.body;
   const info = await transporter.sendMail({
-    from: gmailUser,
-    to: email,
+    from: email,
+    to: gmailUser,
     subject,
     text: `${`${name}:  ${message}`}`,
   });
